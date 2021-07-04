@@ -8,6 +8,11 @@ Requirements
 
 All you need is Docker executor
 
+Versions
+------------
+
+d3pre5s/molecule:2.22 - Ansible 2.9.6 + Molecule 2.22 rc6
+
 Example CI/CD Job
 ----------------
 
@@ -15,10 +20,12 @@ Example CI/CD Job
 
 ```
     stages:
-    - test
- 
+      - test
+
     test:
       stage: test
+      services:
+        - docker:dind
       image: d3pre5s/molecule:2.22
       script:
         - molecule test
