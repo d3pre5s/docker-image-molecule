@@ -9,12 +9,12 @@ Requirements
 All you need is Docker executor
 
 Versions
-------------
+--------
 
-d3pre5s/molecule:2.22 - Ansible 2.9.6 + Molecule 2.22 rc6
+- [d3pre5s/molecule:2.22](https://hub.docker.com/r/d3pre5s/molecule) – Ansible 2.9.5 + Molecule 2.22 rc6
 
 Example CI/CD Job
-----------------
+-----------------
 
 .gitlab-ci.yml example
 
