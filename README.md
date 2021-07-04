@@ -1,40 +1,28 @@
-Role Name
+Molecule Docker Image
 =========
 
-A brief description of the role goes here.
+Hello! This is source Dockerfile for Molecule. It can be used for automation tests for Ansible roles in your CI/CD tool.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should
-be mentioned here. For instance, if the role uses the EC2 module, it may be a
-good idea to mention in this section that the boto package is required.
+All you need is Docker executor
 
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including
-any variables that are in defaults/main.yml, vars/main.yml, and any variables
-that can/should be set via parameters to the role. Any variables that are read
-from other roles and/or the global scope (ie. hostvars, group vars, etc.) should
-be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in
-regards to parameters that may need to be set for other roles, or variables that
-are used from other roles.
-
-Example Playbook
+Example CI/CD Job
 ----------------
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
+.gitlab-ci.yml example
 
-    - hosts: servers
-      roles:
-         - { role: ansible-role-nginx, x: 42 }
+```
+    stages:
+    - test
+ 
+    test:
+      stage: test
+      image: d3pre5s/molecule:2.22
+      script:
+        - molecule test
+```
 
 License
 -------
@@ -44,5 +32,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a
-website (HTML is not allowed).
+Konstantin Deepezh, https://t.me/deusops
