@@ -1,0 +1,18 @@
+---
+dependency:
+  name: {{ cookiecutter.dependency_name }}
+driver:
+  name: {{ cookiecutter.driver_name }}
+platforms:
+  - name: instance
+{%- if cookiecutter.driver_name in ['containers', 'docker', 'podman'] %}
+    image: d3pre5s/ubuntu-py:20.04
+    pre_build_image: true
+{%- endif %}
+provisioner:
+  name: {{ cookiecutter.provisioner_name }}
+verifier:
+  name: {{ cookiecutter.verifier_name }}
+lint: |
+  yamllint .
+  ansible-lint .
